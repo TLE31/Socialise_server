@@ -61,7 +61,7 @@ exports.register = asyncHandler(async (req, res, next) => {
 
     await user.save({ validateBeforeSave: false });
 
-    const verificationUrl = `https://socializepriyanshu.netlify.app//emailverification/${token}`;
+    const verificationUrl = `https://socializepriyanshu.netlify.app/emailverification/${token}`;
 
     const message = `Please verify your email by clicking on the link below: \n\n ${verificationUrl}`;
 
@@ -90,7 +90,7 @@ exports.resendEmailVerification = asyncHandler(async (req, res, next) => {
 
     await user.save({ validateBeforeSave: false });
 
-    const verificationUrl = `https://whimsical-belekoy-4901e3.netlify.app/emailverification/${token}`;
+    const verificationUrl = `https://socializepriyanshu.netlify.app/emailverification/${token}`;
 
     const message = `Please verify your email by clicking on the link below: \n\n ${verificationUrl}`;
 
@@ -205,7 +205,7 @@ exports.updateUserCrediantials = asyncHandler(async (req, res, next) => {
         user.unverifiedEmail = req.body.email;
         user.isVerified = false;
         await user.save({ validateBeforeSave: false });
-        const verificationUrl = `https://whimsical-belekoy-4901e3.netlify.app/editemailverification/${token}`;
+        const verificationUrl = `https://socializepriyanshu.netlify.app/editemailverification/${token}`;
 
         const message = `Please verify your email by clicking on the link below: \n\n ${verificationUrl}`;
 
