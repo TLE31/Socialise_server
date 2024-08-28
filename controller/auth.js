@@ -238,7 +238,8 @@ exports.forgotPasswordToken = asyncHandler(async (req, res, next) => {
     }
 
     const resetToken = user.getResetPasswordToken();
-    const resetUrl = `https://whimsical-belekoy-4901e3.netlify.app/resetpassword/${resetToken}`;
+    const resetUrl = `https://socializepriyanshu.netlify.app
+    /resetpassword/${resetToken}`;
 
     await user.save({ validateBeforeSave: false });
 
