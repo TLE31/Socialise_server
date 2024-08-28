@@ -238,15 +238,14 @@ exports.forgotPasswordToken = asyncHandler(async (req, res, next) => {
     }
 
     const resetToken = user.getResetPasswordToken();
-    const resetUrl = `https://socializepriyanshu.netlify.app
-    /resetpassword/${resetToken}`;
+    const resetUrl = `https://socializepriyanshu.netlify.app/resetpassword/${resetToken}`;
 
     await user.save({ validateBeforeSave: false });
 
     const options = {
         email: req.body.email,
         subject: 'Reset Password',
-        message: `You are receiving this email because you (or someone else) has requested the reset of a password. Please change your password on folloeing url: \n\n ${resetUrl}`
+        message: `You are receiving this email because you (or someone else) has requested the reset of a password. Please change your password on following url: \n\n ${resetUrl}`
     }
 
     try {
